@@ -1,0 +1,12 @@
+{% extends 'base.html' %}  <!-- Aquí traemos \ntodo el código que está en base.html -->
+
+<!-- Sobreescribimos un bloque de código -->
+{% block cambio1 %}
+    {% for curso in cursos %}
+        <h2>{{curso.nombre}}</h2>
+        <p class="lead mb-0"></p>
+            Número de camada: {{curso.camada}}
+        </p>
+        <hr>
+    {% endfor %}
+{% endblock %}

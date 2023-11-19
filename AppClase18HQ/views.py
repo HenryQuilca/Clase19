@@ -1,15 +1,23 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from AppClase18HQ.models import Curso
 
 
 # Create your views here.
-def crear_curso(request):
-    curso = Curso(nombre="Python", camada=47785 )
-    curso.save()
-    contexto = {"curso": curso}
+def mostrar_cursos(request):
+    cursos = Curso.objects.all()
+    contexto = {
+        "cursos": cursos,
+        "nombre": "Henry"
+    }
+    return render(request, 'AppCoder/cursos.html', contexto)
 
-    return render(request, 'index.html', contexto)
+
+def crear_curso(request):
+    curso = Curso(nombre="Python", camada=47789)
+    curso.save()
+
+    return redirect("/app/cursos/")
 
 
 def show_html(request):
