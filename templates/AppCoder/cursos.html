@@ -2,6 +2,15 @@
 
 <!-- Sobreescribimos un bloque de código -->
 {% block cambio1 %}
+<div>
+    <form action="/app/buscar/" method="GET">
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Buscar">
+    </form>
+
+</div>
     {% for curso in cursos %}
         <h2>{{curso.nombre}}</h2>
         <p class="lead mb-0"></p>

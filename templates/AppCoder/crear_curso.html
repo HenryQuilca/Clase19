@@ -1,0 +1,14 @@
+{% extends 'base.html' %}  <!-- Aquí traemos \ntodo el código que está en base.html -->
+
+<!-- Sobreescribimos un bloque de código -->
+{% block cambio1 %}
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Crear">
+
+</form>
+
+{% endblock %}
