@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block cambio1 %}
+    <p>El nombre del curso es: <b>{{curso.nombre}}</b></p>
+    <p>Camada: <b>{{curso.camada}}</b></p>
+
+    <p>
+      <a href="{% url 'CursosList' %}">Listar Cursos</a>
+    </p>
+{% endblock %}
